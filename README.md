@@ -42,19 +42,38 @@ This app covers the key concepts every Blazor developer should master:
 
 ---
 
-## ⚙️ Getting Started
+⚙️ Getting Started
+Prerequisites
 
-### Prerequisites
-- [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
-- (Optional) Visual Studio 2022 or VS Code
+    .NET 8 SDK (Required to build the app locally)
 
-### Clone & Run
-```bash
-git clone https://github.com/<your-username>/BlazingTrails.git
-cd BlazingTrails
-dotnet run --project BlazingTrails.Client
-```
-Then open the app at http://localhost:5000.
+    Docker Desktop (Recommended for consistent, idempotent builds)
+
+Clone & Run
+
+For the most reliable and consistent environment, which ensures that Node.js, NPM, and Sass compilation run correctly (idempotency), use the provided Dockerfile.
+
+    Clone the repository:
+
+git clone [https://github.com/](https://github.com/)<your-username>/BlazingTrails.git
+cd BlazingTrails/BlazingTrails.Client
+
+    Build the Docker Image:
+    This command executes the multi-stage build, compiling the Blazor app, running the SASS targets, and packaging the result into a lightweight Nginx image.
+
+docker build -t blazingtrails-app .
+
+    Run the Container:
+    Create a container named blazingtrails-container and map the container's port 80 (Nginx) to your host's port 8080.
+
+docker run -d -p 8080:80 --name blazingtrails-container blazingtrails-app
+
+Then open the app in your browser at http://localhost:8080.
+
+Local Development (Fast Iteration): If you are actively coding and want hot-reload, stop the container and use:
+
+dotnet watch --project BlazingTrails.Client
+
 
 🧭 Why It Matters
 
