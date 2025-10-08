@@ -1,22 +1,21 @@
-# Exclude standard .NET build output
-*/bin/
-*/obj/
+# .NET build output (any depth, both Bin/bin and Obj/obj)
+**/[Bb]in/
+**/[Oo]bj/
 
-# Exclude published output
-# This assumes you publish to a 'publish' directory
-# You may also want to exclude wwwroot/_framework if you find it's being tracked
-# and causing issues, though a good build process shouldn't commit it.
-publish/
+# Published output (any depth)
+**/[Pp]ublish/
 
-# Exclude Blazor-specific artifacts
-# These are generated and should not be tracked
-wwwroot/service-worker-assets.js
-wwwroot/_framework/
+# Blazor-specific generated artifacts
+**/wwwroot/_framework/
+**/wwwroot/service-worker-assets.js
 
-# Ignore files produced by Visual Studio
+# Visual Studio
 .vs/
 *.user
 *.suo
 
-# Ignore local run settings
+# Local dev settings
 appsettings.Development.json
+
+# Node (client projects)
+**/node_modules/
