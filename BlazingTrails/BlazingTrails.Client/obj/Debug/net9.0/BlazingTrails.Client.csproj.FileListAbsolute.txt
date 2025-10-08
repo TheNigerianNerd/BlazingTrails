@@ -1059,10 +1059,6 @@ C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\Bla
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\scopedcss\Features\Home\TrailSearch.razor.rz.scp.css
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\doemwqdjwb-x9gl6522l6.gz
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\fenw6y8w68-x9gl6522l6.gz
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.4hioarn2uo.wasm
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.wfz7aerywd.pdb
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.4hioarn2uo.wasm.gz
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.wfz7aerywd.pdb.gz
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\BlazingTrails.Client.sourcelink.json
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\8a5abmcvvj-t1cqhe9u97.gz
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\e50o4tfeo7-sejl45xvog.gz
@@ -1087,6 +1083,10 @@ C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\Bla
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\fqunfnfq5o-5xkyoqdlq3.gz
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\rly7s12r6a-4d85u1mtcx.gz
 C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\viykj39edq-uuxx163ram.gz
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\n0o6aanu2j-4hioarn2uo.gz
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\bgv23wo2xp-wfz7aerywd.gz
-C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\fgk0e2inp0-zgt8o4ik56.gz
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.d0bkwi292p.wasm
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.r3ycsnk7q8.pdb
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.d0bkwi292p.wasm.gz
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\bin\Debug\net9.0\wwwroot\_framework\BlazingTrails.Client.r3ycsnk7q8.pdb.gz
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\n0o6aanu2j-d0bkwi292p.gz
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\bgv23wo2xp-r3ycsnk7q8.gz
+C:\The Nigerian Nerd\Engineering\Research\Blazor\BlazingTrails\BlazingTrails\BlazingTrails.Client\obj\Debug\net9.0\compressed\fgk0e2inp0-ssgqepetxv.gz
