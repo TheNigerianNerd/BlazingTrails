@@ -1,6 +1,6 @@
 # 🏞️ BlazingTrails
 
-**BlazingTrails** is an app built in Blazor using C#12 and .NET8 while reading *Blazor in Action* — a hands-on guide to mastering component-based web development with **.NET** and **C#** authpreed by Christ Saintly.  
+**BlazingTrails** is an app built in Blazor using C#12 and .NET8 while reading *Blazor in Action* — a hands-on guide to mastering component-based web development with **.NET** and **C#** by Christ Saintly.  
 This project demonstrates practical skills across the entire Blazor stack — from UI components and routing to authentication, state management, and testing.
 
 ---
