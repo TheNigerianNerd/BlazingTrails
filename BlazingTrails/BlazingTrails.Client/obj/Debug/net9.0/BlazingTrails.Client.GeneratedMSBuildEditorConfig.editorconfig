@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXNcSG9tZVxIb21lUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/The Nigerian Nerd/Engineering/Research/Blazor/BlazingTrails/BlazingTrails/BlazingTrails.Client/Features/Home/SearchPage.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXNcSG9tZVxTZWFyY2hQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/The Nigerian Nerd/Engineering/Research/Blazor/BlazingTrails/BlazingTrails/BlazingTrails.Client/Features/Home/TrailCard.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXNcSG9tZVxUcmFpbENhcmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -51,3 +55,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/The Nigerian Nerd/Engineering/Research/Blazor/BlazingTrails/BlazingTrails/BlazingTrails.Client/Features/Home/TrailDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXNcSG9tZVxUcmFpbERldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4spzlg73jk
+
+[C:/The Nigerian Nerd/Engineering/Research/Blazor/BlazingTrails/BlazingTrails/BlazingTrails.Client/Features/Home/TrailSearch.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXNcSG9tZVxUcmFpbFNlYXJjaC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-pyjuv8hvkd
