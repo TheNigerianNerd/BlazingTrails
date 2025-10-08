@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    # ----------------------------------------------------
+    # FIX: Change the working directory (cd) to BlazingTrails.Client 
+    # so that subsequent commands find the Dockerfile and source 
+    # files using local paths ('.'). This is cleaner than using 
+    # full explicit paths in the run command.
+    # ----------------------------------------------------
+    - name: Build the Docker image
+      working-directory: ./BlazingTrails.Client
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
