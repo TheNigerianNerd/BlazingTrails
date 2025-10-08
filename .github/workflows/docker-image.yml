@@ -5,6 +5,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  # ADDED: This is the trigger that makes the "Run workflow" button appear.
+  workflow_dispatch: 
 
 jobs:
 
@@ -14,5 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    # FIX: Change the working directory (cd) to BlazingTrails.Client 
+    # so that subsequent commands find the Dockerfile and source 
+    # files using local paths ('.').
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      working-directory: ../
+      run: docker build . --file ./BlazingTrails.Client/Dockerfile --tag my-image-name:$(date +%s)
