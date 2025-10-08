@@ -16,10 +16,11 @@ jobs:
     - uses: actions/checkout@v4
     
     # ----------------------------------------------------
-    # FIX: Update the 'run' command to point to the correct
-    # directory where the Dockerfile and source files reside.
-    # We assume the BlazingTrails.Client directory is where 
-    # the Dockerfile and build context are located.
+    # FIX: The previous command assumed the Dockerfile was in 
+    # a subfolder. If the Dockerfile is in the repository 
+    # root (where checkout places the code), we must use '.' 
+    # for both context and file location to resolve the 
+    # "path not found" error.
     # ----------------------------------------------------
     - name: Build the Docker image
-      run: docker build ./BlazingTrails.Client --file BlazingTrails.Client/Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
