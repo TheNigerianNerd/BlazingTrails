@@ -33,7 +33,7 @@ This app covers the key concepts every Blazor developer should master:
 
 ## 🧰 Tech Stack
 
-- **Framework:** Blazor WebAssembly (.NET 6 / C# 10)  
+- **Framework:** Blazor WebAssembly (.NET 8 / C# 12)  
 - **Frontend:** Razor Components, Bootstrap 5, CSS  
 - **Auth:** Auth0 Integration  
 - **Testing:** bUnit (Component Unit Testing)  
