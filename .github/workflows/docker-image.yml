@@ -21,5 +21,5 @@ jobs:
     # so that subsequent commands find the Dockerfile and source 
     # files using local paths ('.').
     - name: Build the Docker image
-      working-directory: ../
-      run: docker build . --file ./BlazingTrails/BlazingTrails.Client/Dockerfile --tag my-image-name:$(date +%s)
+      working-directory: ./BlazingTrails/BlazingTrails.Client
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
