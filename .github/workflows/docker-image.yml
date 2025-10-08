@@ -14,5 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    # ----------------------------------------------------
+    # FIX: Update the 'run' command to point to the correct
+    # directory where the Dockerfile and source files reside.
+    # We assume the BlazingTrails.Client directory is where 
+    # the Dockerfile and build context are located.
+    # ----------------------------------------------------
     - name: Build the Docker image
-      run: docker build ../BlazingTrails.Client --file BlazingTrails.Client/Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build ./BlazingTrails.Client --file BlazingTrails.Client/Dockerfile --tag my-image-name:$(date +%s)
