@@ -1,6 +1,6 @@
 # Exclude standard .NET build output
-bin/
-obj/
+*/bin/
+*/obj/
 
 # Exclude published output
 # This assumes you publish to a 'publish' directory
