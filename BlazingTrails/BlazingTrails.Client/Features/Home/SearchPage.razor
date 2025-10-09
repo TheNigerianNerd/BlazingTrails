@@ -12,7 +12,8 @@
 </nav>
 
 <h3 class="mt-5 mb-4">Search results for "@SearchTerm"</h3>
-<SearchFilter SearchTerm="@SearchTerm" />
+
+<SearchFilter SearchTerm="@SearchTerm" MaxLength="MaxLength" MaxTime="MaxTime" />
 
 @if (_searchResults == null)
 {
@@ -45,7 +46,7 @@ else
         {
             var allTrails = await Http.GetFromJsonAsync<IEnumerable<Trail>>("trails/trail-data.json");
             _searchResults = allTrails!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase)
-            || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+                                               || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
             _cachedSearchResults = _searchResults;
         }
         catch (HttpRequestException ex)

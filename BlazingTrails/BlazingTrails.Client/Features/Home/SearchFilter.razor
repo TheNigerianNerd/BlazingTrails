@@ -35,6 +35,11 @@
         _maxLength = MaxLength ?? 0;
         _maxTime = MaxTime ?? 0;
     }
+    protected override void OnInitialized()
+    {
+        _maxLength = MaxLength ?? 0;
+        _maxTime = MaxTime ?? 0;
+    }
     private void FilterSearchResults(){
         var uriWithQuerystring = NavManager.GetUriWithQueryParameters(new Dictionary<string, object?>()
         {
