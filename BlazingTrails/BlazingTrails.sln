@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Client", "BlazingTrails.Client\BlazingTrails.Client.csproj", "{A8E31154-D479-84B1-E22E-1F6CEE66182E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Api", "BlazingTrails.Api\BlazingTrails.Api.csproj", "{15B8E014-4C57-4392-8E84-0E9E6D1BA4AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E2D9B1DA-C21A-4816-A518-C568D85A50AB} = {E2D9B1DA-C21A-4816-A518-C568D85A50AB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Shared", "BlazingTrails.Shared\BlazingTrails.Shared.csproj", "{E2D9B1DA-C21A-4816-A518-C568D85A50AB}"
 EndProject
