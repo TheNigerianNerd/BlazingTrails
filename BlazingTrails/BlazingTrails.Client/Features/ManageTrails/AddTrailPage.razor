@@ -57,13 +57,18 @@ else if (_errorMessage is not null)
             <ValidationMessage For="@(() => _trail.Location)" />
         </FormFieldSet>
 
+        <FormFieldSet Width="col-5">
+            <label for="trailTime" class="font-weight-bold  text-secondary">Time</label>
+            <InputTime @bind-Value="_trail.TimeInMinutes" id="trailTime" />
+            <ValidationMessage For="@(() => _trail.TimeInMinutes)" />
+        </FormFieldSet>
     </FormSection>
 
     <FormSection Title="Difficulty"
                  HelpText="Help other hikers out by telling them the length of the trail is how long it might take them.">
 
         <FormFieldSet Width="col-3">
-            <label for="trailLength" class="font-weight-bold text-secondary">Length (km)</label>
+            <label for="trailLength" class="font-weight-bold text-secondary">Length (km)</label>            
             <InputNumber @bind-Value="_trail.Length" class="form-control" id="trailLength" />
             <ValidationMessage For="@(() => _trail.Length)" />
         </FormFieldSet>

@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Security.Cryptography.X509Certificates;
+using FluentValidation;
 
 namespace BlazingTrails.Shared.Features.ManageTrails;
 
@@ -28,6 +29,7 @@ public class TrailValidator : AbstractValidator<TrailDto>
         RuleFor(x => x.Location).NotEmpty().WithMessage("Please enter a location");
         RuleFor(x => x.Length).GreaterThan(0).WithMessage("Please enter a length");
         RuleForEach(x => x.Route).SetValidator(new RouteInstructionValidator());
+        RuleFor(x => x.TimeInMinutes).GreaterThan(0).WithMessage("Please enter a time");
     }
 }
 
