@@ -13,9 +13,15 @@ RUN apt-get update \
     && npm install -g sass \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the .csproj and package.json first to cache restore/install steps
-COPY *.csproj ./
-COPY package.json ./
+# **CRITICAL COPY BLOCK:** Copy the solution file and all project files (.csproj)
+# This uses a recursive copy pattern to place all .csproj files into the build context,
+# maintaining the relative folder structure (e.g., BlazingTrails.Shared/BlazingTrails.Shared.csproj)
+COPY BlazingTrails.sln .
+# Copy all project files into their respective subfolders within /App/
+COPY BlazingTrails/BlazingTrails.Shared/BlazingTrails.Shared.csproj BlazingTrails.Shared/
+COPY BlazingTrails/BlazingTrails.Client/BlazingTrails.Client.csproj BlazingTrails.Client/
+# UPDATED: Target the API project for the backend logic
+COPY BlazingTrails/BlazingTrails.Api/BlazingTrails.Api.csproj BlazingTrails.Api/
 # Restore dependencies (which will also trigger the NpmInstall target via BeforeTargets)
 RUN dotnet restore
 
@@ -25,7 +31,8 @@ COPY . ./
 # Build and publish a release. 
 # This command runs all MSBuild targets, including CompileScopedScss, 
 # which calls 'npm run sass'.
-RUN dotnet publish -c Release -o /app/publish
+WORKDIR /App/BlazingTrails.Api
+RUN dotnet publish "BlazingTrails.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 #--------------------------------------------------------------------------------
 # Stage 2: Serve (using Nginx)
