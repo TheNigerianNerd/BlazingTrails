@@ -1,6 +1,8 @@
 ﻿@page "/add-trail"
 @using BlazingTrails.Client.Validation
 @using BlazingTrails.Shared.Features.ManageTrails
+@using BlazingTrails.Shared.Features.ManageTrails.Shared
+
 @inject IMediator Mediator
 
 <PageTitle>Add Trail - Blazing Trails</PageTitle>
@@ -166,9 +168,35 @@ else if (_errorMessage is not null)
             return;
         }
 
-        _trail = new TrailDto();
-        _errorMessage = null;
+        if(_trailImage is null)
+        {
+            _submitSuccessful = true;
+            ResetForm();
+            return;
+        }
+
+        await ProcessImage(response.TrailId);     
+    }
+
+    private async Task ProcessImage(int trailId)
+    {
+        var imageUploadResponse = await Mediator.Send(new UploadTrailImageRequest(trailId, _trailImage));
+
+        if(string.IsNullOrWhiteSpace(imageUploadResponse.ImageName))
+        {
+            _errorMessage = "Your trail was saved but there was an issue uploading the image.";
+            return;
+        }
         _submitSuccessful = true;
+        ResetForm();
+    }
+
+    private void ResetForm()
+    {
+        _trail  =  new  TrailDto(); 
+        _editContext  =  new  EditContext(_trail); 
+        _editContext.SetFieldCssClassProvider(new  BootstrapCssClassProvider()); 
+       _trailImage  =  null;
     }
     private void LoadTrailImage(InputFileChangeEventArgs e) => _trailImage = e.File;
 }
