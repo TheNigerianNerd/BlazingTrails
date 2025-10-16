@@ -1,7 +1,4 @@
-﻿@using BlazingTrails.Client.Validation
-@using BlazingTrails.Shared.Features.ManageTrails.Shared
-
-<EditForm EditContext="_editContext" OnValidSubmit="SubmitForm">
+﻿<EditForm EditContext="_editContext" OnValidSubmit="SubmitForm">
     <FluentValidationValidator />
 
     <FormSection Title="Basic Details"
@@ -33,10 +30,21 @@
     </FormSection>
 
     <FormSection Title="Trail Image" HelpText="Add an image of the trail to help hikers find it">
-        <FormFieldSet>
-            <label for="trailImage" class="font-weight-bold  text-secondary">
-                Image</label>
-            <InputFile OnChange="LoadTrailImage" class="form-control-file" id="trailImage" accept=".png,.jpg,.jpeg" />
+        <FormFieldSet Width="col-6">
+            <label for="trailImage" class="font-weight-bold text-secondary">Image</label>
+            @if (string.IsNullOrWhiteSpace(_trail.Image))
+            {
+                <InputFile OnChange="LoadTrailImage" class="form-control-file" id="trailImage" accept=".png,.jpg,.jpeg" />
+            }
+            else
+            {
+                <div class="card bg-dark text-white">
+                    <img src="images/@_trail.Image" />
+                    <div class="card-img-overlay">
+                        <button class="btn btn-primary btn-sm" @onclick="RemoveTrailImage">Remove</button>
+                    </div>
+                </div>
+            }
         </FormFieldSet>
     </FormSection>
 
@@ -123,12 +131,42 @@
         _editContext.SetFieldCssClassProvider(new BootstrapCssClassProvider());
         _trailImage = null;
     }
-    protected override void OnInitialized()
+    protected override void OnParametersSet()
     {
         _editContext = new EditContext(_trail);
         _editContext.SetFieldCssClassProvider(new BootstrapCssClassProvider());
+
+        if (Trail != null)
+        {
+            _trail.Id = Trail.Id;
+            _trail.Name = Trail.Name;
+            _trail.Description = Trail.Description;
+            _trail.Location = Trail.Location;
+            _trail.Image = Trail.Image;
+            _trail.ImageAction = ImageAction.None;
+            _trail.Length = Trail.Length;
+            _trail.TimeInMinutes = Trail.TimeInMinutes;
+
+            _trail.Route.Clear();
+            _trail.Route.AddRange(Trail.Route.Select(ri => new TrailDto.RouteInstruction
+            {
+                Stage = ri.Stage,
+                Description = ri.Description
+            }));
+        }
     }
-    private void LoadTrailImage(InputFileChangeEventArgs e) => _trailImage  =  e.File;
+
+    private void LoadTrailImage(InputFileChangeEventArgs e)
+    {
+        _trailImage = e.File;
+        _trail.ImageAction = ImageAction.Add;
+    }
+
+    private void RemoveTrailImage()
+    {
+        _trail.Image = null;
+        _trail.ImageAction = ImageAction.Remove;
+    }
 
     private async Task SubmitForm() => await  OnSubmit(_trail, _trailImage);
 }
