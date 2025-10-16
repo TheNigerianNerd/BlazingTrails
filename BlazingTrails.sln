@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazingTrails", "BlazingTra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Client", "BlazingTrails\BlazingTrails.Client\BlazingTrails.Client.csproj", "{0A422EE6-7DC6-4BC1-9228-376B63D0C0F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Api", "BlazingTrails\BlazingTrails.Api\BlazingTrails.Api.csproj", "{96762FC5-E016-4F7D-BD1D-413C28B5319D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,11 +31,24 @@ Global
 		{0A422EE6-7DC6-4BC1-9228-376B63D0C0F8}.Release|x64.Build.0 = Release|Any CPU
 		{0A422EE6-7DC6-4BC1-9228-376B63D0C0F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{0A422EE6-7DC6-4BC1-9228-376B63D0C0F8}.Release|x86.Build.0 = Release|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Debug|x64.Build.0 = Debug|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Debug|x86.Build.0 = Debug|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Release|x64.ActiveCfg = Release|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Release|x64.Build.0 = Release|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Release|x86.ActiveCfg = Release|Any CPU
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0A422EE6-7DC6-4BC1-9228-376B63D0C0F8} = {ABC08977-CFAE-E8FB-FA79-04FB29A6AB9E}
+		{96762FC5-E016-4F7D-BD1D-413C28B5319D} = {ABC08977-CFAE-E8FB-FA79-04FB29A6AB9E}
 	EndGlobalSection
 EndGlobal

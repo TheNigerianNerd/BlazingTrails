@@ -1,5 +1,6 @@
 @page "/search/{SearchTerm}"
-@page "/search/{SearchTerm}/maxlength/{MaxLength:int}"
+
+@inject IMediator Mediator
 @inject HttpClient Http
 
 <PageTitle>Search Trails - Blazing Trails</PageTitle>
@@ -42,7 +43,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        try
+        @* try
         {
             var allTrails = await Http.GetFromJsonAsync<IEnumerable<Trail>>("trails/trail-data.json");
             _searchResults = allTrails!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase)
@@ -50,6 +51,28 @@ else
             _cachedSearchResults = _searchResults;
         }
         catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading trail data: {ex.Message}");
+        } *@
+        try
+        {
+            var response = await Mediator.Send(new GetTrailsRequest());
+            var allTrails = response.Trails.Select(x => new Trail{
+                Id = x.Id,
+                Name = x.Name,
+                Image = x.Image,
+                Description = x.Description,
+                Location = x.Location,
+                Length = x.Length,
+                TimeInMinutes = x.TimeInMinutes
+            });
+            _searchResults = allTrails.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase)
+                                           || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+            _cachedSearchResults = _searchResults;
+
+            UpdateFilters();
+        }
+        catch(HttpRequestException ex)
         {
             Console.WriteLine($"There was a problem loading trail data: {ex.Message}");
         }

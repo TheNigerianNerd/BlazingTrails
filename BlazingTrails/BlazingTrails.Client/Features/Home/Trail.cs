@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using static BlazingTrails.Shared.Features.ManageTrails.Shared.TrailDto;
+
+namespace BlazingTrails.Api.Persistence.Entities;
 public class Trail
 {
     public int Id { get; set; }
@@ -8,11 +13,16 @@ public class Trail
     public int TimeInMinutes { get; set; }
     public string TimeFormatted => $"{TimeInMinutes / 60}h {TimeInMinutes % 60}m";
     public int Length { get; set; }
-    public IEnumerable<RouteInstruction> Route { get; set; }
-    = Array.Empty<RouteInstruction>();
+    public ICollection<RouteInstruction> Route { get; set; } = default!;
 }
-public class RouteInstruction
+public class TrailConfig : IEntityTypeConfiguration<Trail>
 {
-    public int Stage { get; set; }
-    public string Description { get; set; } = "";
+    public void Configure(EntityTypeBuilder<Trail> builder)
+    {
+        builder.Property(x => x.Name).IsRequired();
+        builder.Property(x => x.Description).IsRequired();
+        builder.Property(x => x.Location).IsRequired();
+        builder.Property(x => x.TimeInMinutes).IsRequired();
+        builder.Property(x => x.Length).IsRequired();
+    }
 }
